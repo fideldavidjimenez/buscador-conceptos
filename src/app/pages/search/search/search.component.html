@@ -1,0 +1,103 @@
+<div id="site-container">
+    <div style="height: 100px; width: 100%; background-color: #dddddd;"></div>
+    <div id="search-index-container">
+        <div>
+            <div>
+                <h1>Buscador de conceptos jurídicos</h1>
+                <div id="search-block">
+                    <div class="p-input">
+                        <input type="text" pInputText placeholder="Buscar por palabra clave" class="search-field" />
+                        <p-button (click)="formpanel.toggle($event)" icon="pi pi-sliders-h"
+                            styleClass="p-button-text p-button-warn">
+                        </p-button>
+                    </div>
+                    <p-button icon="pi pi-search" styleClass="p-inputgroup-addon p-button-warn p-button-rounded"
+                        (click)="prueba(mitarget888)">
+                    </p-button>
+                </div>
+                <p class="text-lv2">La Superintendencia de Industria y Comercio pone a disposición de la ciudadanía una
+                    herramienta de
+                    búsqueda y consulta de conceptos jurídicos.</p>
+            </div>
+        </div>
+        <div #mitarget888>DESTINO</div>
+    </div>
+    <div></div>
+</div>
+<p-overlayPanel #formpanel>
+    <div>
+        <form [formGroup]="form">
+            <div class="columns full-width">
+                <div class="col2">
+                    <span class="p-input sic-form-input">
+                        <label htmlFor="ano">Año de radicación</label>
+                        <p-dropdown class="full-width" id="ano" [options]="years" formControlName="ano"
+                            placeholder="Seleccione año" [showClear]="true" pTooltip="Texto de ayuda">
+                        </p-dropdown>
+                        <p-message severity="error" text="Campo requerido"
+                            *ngIf="form.get('ano')?.invalid && form.get('ano')?.dirty"></p-message>
+                    </span>
+                </div>
+                <div class="col2">
+                    <span class="p-input sic-form-input">
+                        <label htmlFor="numero">Número de radicado</label>
+                        <input class="full-width" pInputText pKeyFilter="int" id="numero" type="text"
+                            placeholder="Máximo 10 cifras" pTooltip="Texto de ayuda"/>
+                        <p-message severity="error" text="Campo requerido"
+                            *ngIf="form.get('ano')?.invalid && form.get('ano')?.dirty"></p-message>
+                    </span>
+                </div>
+            </div>
+            <h3 class="sic-form-subtitle">Fecha de radicación</h3>
+            <div class="columns full-width">
+                <div class="col2">
+                    <span class="sic-form-input"><label htmlFor="desde">Desde</label>
+                        <p-calendar id="desde" formControlName="fechaInicial" dateFormat="yy-mm-dd"
+                            [showIcon]="true" pTooltip="Texto de ayuda"></p-calendar></span>
+                </div>
+                <div class="col2">
+                    <span class="sic-form-input">
+                        <label htmlFor="hasta">Hasta</label>
+                        <p-calendar id="hasta" formControlName="fechaFinal" [showIcon]="true" pTooltip="Texto de ayuda"></p-calendar>
+                    </span>
+                </div>
+            </div>
+
+            <div class="columns full-width">
+                <div class="col">
+                    <span class="p-input sic-form-input">
+                        <label htmlFor="areasss">Áreas</label>
+                        <p-dropdown class="full-width" id="areasss" [options]="areas" formControlName="area"
+                            placeholder="Seleccione" pTooltip="Texto de ayuda">
+                        </p-dropdown>
+                    </span>
+                </div>
+            </div>
+
+            <div class="columns full-width">
+                <div class="col">
+                    <span class="p-input sic-form-input">
+                        <label htmlFor="temass">Temas</label>
+                        <p-dropdown class="full-width" id="temass" [options]="temas" formControlName="tema"
+                            placeholder="Seleccione" pTooltip="Texto de ayuda">
+                        </p-dropdown>
+                    </span>
+                </div>
+            </div>
+
+            <div class="columns full-width">
+                <div class="col">
+                    <span class="sic-form-input">
+                        <label htmlFor="subtema">Subtemas</label>
+                        <textarea class="full-width" formControlName="subtema" placeholder="Escriba" rows="5" cols="30"
+                            pInputTextarea pTooltip="Texto de ayuda"></textarea>
+                    </span>
+                </div>
+            </div>
+            <div class="button-bar">
+                <p-button (click)="formpanel.toggle($event)" styleClass="p-button-rounded p-button-text" label="Cerrar"></p-button>
+                <p-button (click)="formpanel.toggle($event)" styleClass="p-button-rounded" label="Buscar" [disabled]="form.invalid"></p-button>
+            </div>
+        </form>
+    </div>
+</p-overlayPanel>
