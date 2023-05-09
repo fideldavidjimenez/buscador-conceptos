@@ -42,7 +42,7 @@
                     <span class="p-input sic-form-input">
                         <label htmlFor="numero">Número de radicado</label>
                         <input class="full-width" pInputText pKeyFilter="int" id="numero" type="text"
-                            placeholder="Máximo 10 cifras" pTooltip="Texto de ayuda"/>
+                            placeholder="Máximo 10 cifras" pTooltip="Texto de ayuda" />
                         <p-message severity="error" text="Campo requerido"
                             *ngIf="form.get('ano')?.invalid && form.get('ano')?.dirty"></p-message>
                     </span>
@@ -52,13 +52,14 @@
             <div class="columns full-width">
                 <div class="col2">
                     <span class="sic-form-input"><label htmlFor="desde">Desde</label>
-                        <p-calendar id="desde" formControlName="fechaInicial" dateFormat="yy-mm-dd"
-                            [showIcon]="true" pTooltip="Texto de ayuda"></p-calendar></span>
+                        <p-calendar id="desde" formControlName="fechaInicial" dateFormat="yy-mm-dd" [showIcon]="true"
+                            pTooltip="Texto de ayuda"></p-calendar></span>
                 </div>
                 <div class="col2">
                     <span class="sic-form-input">
                         <label htmlFor="hasta">Hasta</label>
-                        <p-calendar id="hasta" formControlName="fechaFinal" [showIcon]="true" pTooltip="Texto de ayuda"></p-calendar>
+                        <p-calendar id="hasta" formControlName="fechaFinal" [showIcon]="true"
+                            pTooltip="Texto de ayuda"></p-calendar>
                     </span>
                 </div>
             </div>
@@ -95,9 +96,16 @@
                 </div>
             </div>
             <div class="button-bar">
-                <p-button (click)="formpanel.toggle($event)" styleClass="p-button-rounded p-button-text" label="Cerrar"></p-button>
-                <p-button (click)="formpanel.toggle($event)" styleClass="p-button-rounded" label="Buscar" [disabled]="form.invalid"></p-button>
+                <p-button (click)="formpanel.toggle($event)" styleClass="p-button-rounded p-button-text"
+                    label="Cerrar"></p-button>
+                <p-button (click)="formpanel.toggle($event)" styleClass="p-button-rounded" label="Buscar"
+                    [disabled]="form.invalid"></p-button>
             </div>
         </form>
     </div>
 </p-overlayPanel>
+<div id="results-">
+    <div style="margin: 2rem">
+        <app-results></app-results>
+    </div>
+</div>

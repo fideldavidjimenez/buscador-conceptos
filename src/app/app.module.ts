@@ -15,11 +15,10 @@ import { MessageService } from 'primeng/api';
 
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent
-    ],
+        AppComponent, NotfoundComponent],
     imports: [
         AppRoutingModule,
-        AppLayoutModule,
+        AppLayoutModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

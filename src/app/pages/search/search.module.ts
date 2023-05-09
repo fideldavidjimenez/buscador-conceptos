@@ -13,11 +13,15 @@ import { MessageModule } from 'primeng/message';
 import { InputTextModule } from 'primeng/inputtext';
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { TooltipModule } from 'primeng/tooltip';
+import { ResultsComponent } from './results/results.component';
+import { CardModule } from 'primeng/card';
+import { DataViewModule } from 'primeng/dataview';
 
 
 @NgModule({
   declarations: [
-    SearchComponent
+    SearchComponent,
+    ResultsComponent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +35,9 @@ import { TooltipModule } from 'primeng/tooltip';
     MessageModule,
     InputTextModule,
     KeyFilterModule,
-    TooltipModule
+    TooltipModule,
+    CardModule,
+    DataViewModule
   ]
 })
 export class SearchModule { }
