@@ -223,7 +223,9 @@ h6 {
     display: flex;
     justify-content: space-around;
 
-    @media only screen and (max-width: $xs) {}
+    @media only screen and (max-width: $xs) {
+        flex-direction: column;
+    }
 
     ;
 
@@ -250,6 +252,11 @@ h6 {
 
 .col2 {
     width: calc(50% - 2rem);
+
+    @media only screen and (max-width: $xs) {
+        width: 100% !important;
+        padding: 1rem;
+    }
 }
 
 .search-field {
@@ -334,4 +341,11 @@ label {
 
 .b-secondary {
     background: $secondary;
+}
+
+.ng-tns-c22-1.p-calendar.p-calendar-w-btn {
+    @media only screen and (max-width: $xs) {
+        width: 100% !important;
+    }
+    ;
 }
