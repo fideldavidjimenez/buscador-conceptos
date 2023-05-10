@@ -1,29 +1,247 @@
+/*Variables generales*/
+$r: 1.25;
+
+/*Responsive*/
+$xs: 600px;
+$s: 600px;
+$m: 768px;
+$l: 992px;
+$xl: 1200px;
+$full: 100%;
+
+/*Magnitudes*/
+$m-xsmall: calc((1 / $r) / $r);
+$m-small: calc(1 / $r);
+$m-normal: 1;
+$m-large: $r;
+$m-xlarge: $r*$r;
+$m-big: $r*$r*$r;
+
+/*Color*/
+$base: #ffffff;
+$main: #1d1d1d;
+$accent: #004884;
+$secondary: #E6EFFD;
+
+/*Tipografía*/
+h1 {
+    font-size: $m-big;
+}
+
+h2 {
+    font-size: $m-xlarge;
+}
+
+h3 {
+    font-size: $m-large;
+}
+
+h4 {
+    font-size: $m-normal;
+}
+
+h5 {
+    font-size: $m-small;
+}
+
+h6 {
+    font-size: $m-xsmall;
+}
+
+p {
+    font-size: $m-normal;
+}
+
+/*Mixines*/
+@mixin center {
+    margin: 0 auto;
+}
+
+html {
+    @media only screen and (max-width: $xs) {
+        font-size: 16px;
+    }
+
+    ;
+
+    @media only screen and (max-width: $s) {
+        font-size: 16px;
+    }
+
+    ;
+
+    @media only screen and (max-width: $m) {
+        font-size: 16px;
+    }
+
+    ;
+
+    @media only screen and (max-width: $l) {
+        font-size: 18px;
+    }
+
+    ;
+
+    @media only screen and (max-width: $xl) {
+        font-size: 18px;
+    }
+
+    ;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    color: #004884;
+    color: $accent;
+}
+
+.normal-text {
+    font-size: 1rem;
+}
+
+.normal-text-bigger {
+    font-size: 1rem*$r;
 }
 
 #site-container {
     margin: 0 auto;
+
+    @media only screen and (max-width: $xs) {
+        width: $full;
+    }
+
+    ;
+
+    @media only screen and (min-width: $s) {
+        width: $full;
+    }
+
+    ;
+
+    @media only screen and (min-width: $m) {
+        width: $full;
+    }
+
+    ;
+
+    @media only screen and (min-width: $l) {
+        width: $full;
+    }
+
+    ;
+
+    @media only screen and (min-width: $xl) {
+        width: $full;
+    }
+
+    ;
 }
 
-#search-index-container {
-    background-color: #E6EFFD;
-    padding: 72px;
+#main-container {
+
+    @media only screen and (max-width: $xs) {
+        width: $full;
+        padding: 1rem*$m-large;
+    }
+
+    ;
+
+    @media only screen and (min-width: $s) {
+        width: $full;
+        padding: 1rem*$m-large;
+    }
+
+    ;
+
+    @media only screen and (min-width: $m) {
+        width: $full;
+        max-width: $m;
+        padding: 1rem*$m-large;
+        @include center;
+    }
+
+    ;
+
+    @media only screen and (min-width: $l) {
+        width: $full;
+        max-width: $l;
+        padding: 1rem*$m-xlarge;
+        @include center;
+    }
+
+    ;
+    ;
+
+    @media only screen and (min-width: $xl) {
+        width: $full;
+        max-width: $xl;
+        padding: 1rem*$m-xlarge;
+        @include center;
+    }
+
+    ;
 }
 
-#search-filters {
-    width: 552px;
-    overflow: visible;
+#search-block {
+    margin: 1rem*$m-big 0;
+    display: flex;
+
+    .p-input {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: $xs) {}
+
+    ;
+
+    @media only screen and (min-width: $s) {}
+
+    ;
+
+    @media only screen and (min-width: $m) {}
+
+    ;
+
+    @media only screen and (min-width: $l) {
+        max-width: 50%;
+    }
+
+    ;
+
+    @media only screen and (min-width: $xl) {
+        // max-width: 50%;
+    }
+
+    ;
+
 }
 
 .columns {
     display: flex;
     justify-content: space-around;
+
+    @media only screen and (max-width: $xs) {}
+
+    ;
+
+    @media only screen and (min-width: $s) {}
+
+    ;
+
+    @media only screen and (min-width: $m) {}
+
+    ;
+
+    @media only screen and (min-width: $l) {}
+
+    ;
+
+    @media only screen and (min-width: $xl) {}
+
+    ;
 }
 
 .col {
@@ -31,40 +249,89 @@ h6 {
 }
 
 .col2 {
-    width: calc(50% - 32px);
-}
-
-#search-block {
-    margin: 32px 0;
-    display: flex;
+    width: calc(50% - 2rem);
 }
 
 .search-field {
-    width: 360px;
+
+    @media only screen and (max-width: $xs) {
+        width: calc(100% - (1rem * 3)) !important;
+    }
+
+    ;
+
+    @media only screen and (min-width: $s) {
+        width: calc(100% - (1rem * 3)) !important;
+    }
+
+    ;
+
+    @media only screen and (min-width: $m) {
+        width: calc(100% - (1rem * 3)) !important;
+    }
+
+    ;
+
+    @media only screen and (min-width: $l) {
+        width: calc(100% - (1rem * 3)) !important;
+    }
+
+    ;
+
+    @media only screen and (min-width: $xl) {
+        width: calc(100% - (1rem * 3)) !important;
+    }
+
+    ;
 }
 
 .text-lv2 {
-    font-size: 20px;
+    font-size: 1rem*$r;
+
+    @media only screen and (max-width: $xs) {}
+
+    ;
+
+    @media only screen and (min-width: $s) {}
+
+    ;
+
+    @media only screen and (min-width: $m) {}
+
+    ;
+
+    @media only screen and (min-width: $l) {}
+
+    ;
+
+    @media only screen and (min-width: $xl) {}
+
+    ;
 }
 
 .full-width {
     width: 100%;
 }
+
 .sic-form-input {
     display: flex;
     flex-direction: column;
 }
 
 .p-dropdown {
-    width: 100%!important;
+    width: 100% !important;
 }
 
 .sic-form-subtitle {
-    margin-right: 16px;
-    margin-left: 16px;
+    margin-right: 1rem;
+    margin-left: 1rem;
     font-size: 1rem;
 }
 
 label {
-    margin-bottom: 8px;
+    margin-bottom: 1rem*$m-xsmall;
+}
+
+.b-secondary {
+    background: $secondary;
 }

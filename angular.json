@@ -118,6 +118,9 @@
   "defaultProject": "sakai-ng",
   "cli": {
     "analytics": false,
+    "cache": {
+      "enabled": false
+    },
     "schematicCollections": [
       "@angular-eslint/schematics"
     ]

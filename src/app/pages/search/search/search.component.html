@@ -1,9 +1,9 @@
 <div id="site-container">
-    <div style="height: 100px; width: 100%; background-color: #dddddd;"></div>
-    <div id="search-index-container">
-        <div>
+    <div>Header SIC</div>
+    <div class="b-secondary">
+        <div id="main-container">
             <div>
-                <h1>Buscador de conceptos jurídicos</h1>
+                <h2>Buscador de conceptos jurídicos</h2>
                 <div id="search-block">
                     <div class="p-input">
                         <input type="text" pInputText placeholder="Buscar por palabra clave" class="search-field" />
@@ -11,16 +11,14 @@
                             styleClass="p-button-text p-button-warn">
                         </p-button>
                     </div>
-                    <p-button icon="pi pi-search" styleClass="p-inputgroup-addon p-button-warn p-button-rounded"
-                        (click)="prueba(mitarget888)">
+                    <p-button icon="pi pi-search" styleClass="p-inputgroup-addon p-button-warn p-button-rounded">
                     </p-button>
                 </div>
-                <p class="text-lv2">La Superintendencia de Industria y Comercio pone a disposición de la ciudadanía una
+                <p style="display: none">La Superintendencia de Industria y Comercio pone a disposición de la ciudadanía una
                     herramienta de
                     búsqueda y consulta de conceptos jurídicos.</p>
             </div>
         </div>
-        <div #mitarget888>DESTINO</div>
     </div>
     <div></div>
 </div>
@@ -104,8 +102,3 @@
         </form>
     </div>
 </p-overlayPanel>
-<div id="results-">
-    <div style="margin: 2rem">
-        <app-results></app-results>
-    </div>
-</div>
